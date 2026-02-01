@@ -33,3 +33,64 @@ footer {
 footer img {
     width: 20px;
 }
+
+/* Keep the toolbar visible on scroll */
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding-inline: 8px;
+
+  /* Subtle elevation to separate from content */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, .14),
+    0 3px 4px rgba(0, 0, 0, .12),
+    0 1px 5px rgba(0, 0, 0, .20);
+}
+
+/* Brand area on the left */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  text-decoration: none; /* for <a mat-button> */
+  text-transform: none;  /* keep the typed case */
+}
+
+/* Horizontal nav section */
+.main-nav {
+  display: inline-flex;
+  gap: 4px;          /* space between top-level items */
+  margin-left: 12px; /* a bit of room after the brand */
+}
+
+/* Align the chevron nicely on the Products trigger */
+button[mat-button] .chevron {
+  margin-left: 4px;
+}
+
+/* Push utilities to the far right */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Optional: compact menu density */
+.mat-mdc-menu-content {
+  padding-block: 4px;     /* default is ~8px */
+}
+.mat-mdc-menu-item {
+  height: 40px;           /* default is ~48px */
+}
+.mat-mdc-menu-item .mat-icon {
+  margin-right: 12px;
+  opacity: .9;
+}
+
+/* Optional: darker shadow in dark mode */
+@media (prefers-color-scheme: dark) {
+  .app-toolbar {
+    box-shadow: 0 2px 6px rgba(0,0,0,.6);
+  }
+}
