@@ -1,37 +1,43 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  /*
   {
-    path: 'dashboard',
-    canActivate: [authGuard],
+    path: 'home',
     loadComponent: () =>
-      import('./pages/dashboard/dashboard').then((com) => com.Dashboard),
+      import('./pages/home/home.component').then((com) => com.HomeComponent),
   },
   {
-    path: 'qr-reader',
-    canActivate: [authGuard],
+    path: 'about',
     loadComponent: () =>
-      import('./pages/qr-reader/qr-reader').then((com) => com.QrReader),
+      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
   },
   {
-    path: 'user-info',
-    canActivate: [authGuard],
+    path: 'dayworkout',
     loadComponent: () =>
-      import('./pages/user-info/user-info').then((com) => com.UserInfo),
+      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
   },
   {
-    path: 'signup',
+    path: 'infoandbillable',
     loadComponent: () =>
-      import('./pages/signup/signup').then((com) => com.Signup),
+      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
   },
   {
-    path: 'login',
-    loadComponent: () => import('./pages/login/login').then((com) => com.Login),
+    path: 'bonus',
+    loadComponent: () =>
+      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
   },
   {
+    path: 'location',
+    loadComponent: () =>
+      import('./pages/location/location.component').then((com) => com.LocationComponent),
+  },
+  {
+    path: 'contacts',
+    loadComponent: () =>
+      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
+  },
+    {
     path: '',
-    loadComponent: () => import('./pages/login/login').then((com) => com.Login),
+    loadComponent: () => import('./pages/home/home.component').then((com) => com.HomeComponent),
   },
-  */
 ];

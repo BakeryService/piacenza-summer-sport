@@ -4,6 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule }    from '@angular/material/menu';
 import { MatButtonModule }  from '@angular/material/button';
 import { MatIconModule }    from '@angular/material/icon';
+import { RouterOutlet } from '@angular/router';
+import { ɵɵRouterLink } from "@angular/router/testing";
 
 
 @Component({
@@ -12,12 +14,14 @@ import { MatIconModule }    from '@angular/material/icon';
     styleUrls: ['../demo-styling.css'],
     standalone: true,
     imports: [
-        MatToolbarModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-    ]
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    RouterOutlet,
+    ɵɵRouterLink
+]
 })
 export class AppComponent {
-  title = 'angular-quickstart';
+  title = 'piacenza-summer-sport';
 }
