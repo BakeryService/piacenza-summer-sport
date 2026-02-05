@@ -32,6 +32,7 @@ export class AppComponent {
 
   isMobile = false;
   isShrunk = false;
+  sidenavOpen = false;
 
   constructor() {
     // Switch sidenav mode based on viewport size

@@ -1,50 +1,84 @@
-.app-container {
-  display: flex;
+/* Container fills the viewport */
+.root-container {
   height: 100vh;
 }
 
-mat-toolbar {
-  position: fixed;
+/* Sticky top bar */
+.toolbar {
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  min-height: 64px; /* Material default height */
+  box-sizing: border-box;
 }
 
-mat-sidenav-container {
-  margin-top: 64px;
-  flex: 1;
+/* Brand (logo + title) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }
 
-mat-sidenav {
-  width: 250px;
+.logo {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
+.title {
+  font-size: 20px;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Push right-side content */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Desktop horizontal nav */
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-nav button[mat-button] {
+  padding: 0 10px;
+}
+
+/* Sidenav vertical nav (mobile) */
+.sidenav-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 8px;
+}
+
+.sidenav-menu button[mat-button] {
+  justify-content: flex-start;
+  width: 50%;
+  padding: 12px;
+}
+
+/* Optional: slightly larger icons in the drawer */
+.sidenav-menu mat-icon {
+  margin-right: 8px;
+}
+
+/* Content area */
 .content {
-  padding: 20px;
-  flex: 1;
-  overflow: auto;
+  padding: 16px;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-  mat-toolbar {
-    height: 56px;
-  }
-
-  mat-sidenav-container {
-    margin-top: 56px;
-  }
-
-  mat-sidenav {
-    width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  mat-sidenav {
-    width: 100%;
-    max-width: 70vw;
-  }
+/* Optional: improve touch targets on smaller phones if needed */
+@media (max-width: 800px) {
+  .title { font-size: 18px; }
 }

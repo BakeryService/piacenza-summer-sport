@@ -33,46 +33,68 @@
 
 <mat-sidenav-container class="root-container">
 
-  <!-- Sidenav -->
-  <mat-sidenav
-    #sidenav
-    [mode]="isMobile ? 'over' : 'side'"
-    [opened]="!isMobile">
-
-    <div class="sidenav-content">
-      <button mat-button>Dashboard</button>
-      <button mat-button>Products</button>
-      <button mat-button>Orders</button>
-      <button mat-button>Settings</button>
-    </div>
+  <!-- Vertical menu for mobile -->
+  <mat-sidenav #sidenav [mode]="'over'" [opened]="false" role="navigation">
+    <nav class="sidenav-menu">
+      <!-- Brand / Home (left) -->
+      <a mat-button routerLink="/home" (click)="sidenav.close()">
+        <mat-icon aria-hidden="true">home</mat-icon>
+      </a>
+      <a mat-button routerLink="/about">Chi siamo</a>
+      <a mat-button routerLink="/dayworkout">Programma giornaliero</a>
+      <a mat-button routerLink="/infoandcost">Info e costi</a>
+      <a mat-button routerLink="/bonus">Bonus 2026</a>
+      <a mat-button routerLink="/location" (click)="sidenav.close()">Dove siamo</a>
+      <a mat-button routerLink="/contacts">Contatti</a>
+      <!-- Right utilities -->
+      <a mat-button>
+        <mat-icon>account_circle</mat-icon>
+      </a>
+    </nav>
   </mat-sidenav>
 
-  <!-- Main content area -->
+  <!-- Main area -->
   <mat-sidenav-content>
 
+    <!-- Top bar (always visible) -->
+    <mat-toolbar color="primary" class="toolbar">
+      <!-- Mobile: hamburger -->
+      @if (isMobile) {
+      <button mat-icon-button (click)="sidenav.open()" aria-label="Open menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      }
 
-<mat-toolbar color="primary">
-  <!-- Horizontal menu items (center/left) -->
-    <!-- Brand / Home (left) -->
-    <a mat-button routerLink="/home">
-      <mat-icon aria-hidden="true">home</mat-icon>
-    </a>
+      <!-- Brand / Home (left) -->
+      <a mat-button routerLink="/home">
+        <mat-icon aria-hidden="true">home</mat-icon>
+      </a>
 
-    <a mat-button routerLink="/about">Chi siamo</a>
-    <a mat-button routerLink="/dayworkout">Programma giornaliero</a>
-    <a mat-button routerLink="/infoandbillable">Info e costi</a>
-    <a mat-button routerLink="/bonus">Bonus 2026</a>
-    <a mat-button routerLink="/location">Dove siamo</a>
-    <a mat-button routerLink="/contacts">Contatti</a>
-  
-  <!-- Push the right-side actions to the edge -->
-  <span class="spacer"></span>
+      @if (!isMobile) {
+      <nav class="top-nav">
+        <a mat-button routerLink="/about">Chi siamo</a>
+        <a mat-button routerLink="/dayworkout">Programma giornaliero</a>
+        <a mat-button routerLink="/infoandcost">Info e costi</a>
+        <a mat-button routerLink="/bonus">Bonus 2026</a>
+        <a mat-button routerLink="/location">Dove siamo</a>
+        <a mat-button routerLink="/contacts">Contatti</a>
+        <!-- Right utilities -->
+        <a mat-button [matMenuTriggerFor]="userMenu" aria-label="Open account menu">
+          <mat-icon>account_circle</mat-icon>
+        </a>
+      </nav>
+      }
+    </mat-toolbar>
 
-  <!-- Right utilities -->
-  <button mat-icon-button> <!-- [matMenuTriggerFor]="userMenu" aria-label="Open account menu"> -->
-    <mat-icon>account_circle</mat-icon>
-  </button>
-</mat-toolbar>
+    <div id="content">
+      <h1>Piacenza Summer Sport 2026</h1>
+      <router-outlet></router-outlet>
+      <footer>
+        Benvenuti al portale di gestione del centro estivo Piacenza Summer Sport 2026
+      </footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 <!-- Products submenu (dropdown) -->
 <mat-menu #productsMenu="matMenu" yPosition="below" xPosition="after">
@@ -102,15 +124,3 @@
     <span>Sign out</span>
   </button>
 </mat-menu>
-
-  </mat-sidenav-content>
-
-</mat-sidenav-container>
-
-<div id="content">
-  <h1>Piacenza Summer Sport 2026</h1>
-  <router-outlet></router-outlet>
-  <h2>
-    Benvenuti al portale di gestione del centro estivo Piacenza Summer Sport 2026
-  </h2>
-</div>

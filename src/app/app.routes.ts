@@ -17,9 +17,9 @@ export const routes: Routes = [
       import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
   },
   {
-    path: 'infoandbillable',
+    path: 'infoandcost',
     loadComponent: () =>
-      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
+      import('./pages/infoandcost/infoandcost.component').then((com) => com.InfoandcostComponent),
   },
   {
     path: 'bonus',
@@ -34,7 +34,7 @@ export const routes: Routes = [
   {
     path: 'contacts',
     loadComponent: () =>
-      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
+      import('./pages/contacts/contacts.component').then((com) => com.ContactsComponent),
   },
     {
     path: '',
