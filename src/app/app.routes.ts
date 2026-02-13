@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: 'about',
     loadComponent: () =>
-      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
+      import('./pages/about/about.component').then((com) => com.AboutComponent),
   },
   {
     path: 'dayworkout',
@@ -35,6 +35,11 @@ export const routes: Routes = [
     path: 'contacts',
     loadComponent: () =>
       import('./pages/contacts/contacts.component').then((com) => com.ContactsComponent),
+  },
+  {
+    path: 'registration',
+    loadComponent: () =>
+      import('./pages/registration/registration.component').then((com) => com.RegistrationComponent),
   },
     {
     path: '',

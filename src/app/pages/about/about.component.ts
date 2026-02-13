@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+
+type Photo = {
+  url: string;
+  title: string;
+}
 
 @Component({
   selector: 'app-about',
@@ -7,5 +12,6 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
+
 
 }
