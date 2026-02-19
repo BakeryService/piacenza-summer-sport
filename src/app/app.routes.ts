@@ -14,7 +14,7 @@ export const routes: Routes = [
   {
     path: 'dayworkout',
     loadComponent: () =>
-      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
+      import('./pages/dayworkout/dayworkout.component').then((com) => com.DayworkoutComponent),
   },
   {
     path: 'infoandcost',

@@ -12,7 +12,8 @@
   align-items: center;
   gap: 12px;
   padding: 0 16px;
-  min-height: 64px; /* Material default height */
+  min-height: 64px;
+  /* Material default height */
   box-sizing: border-box;
 }
 
@@ -73,12 +74,18 @@
   margin-right: 8px;
 }
 
-/* Content area */
-.content {
-  padding: 16px;
-}
-
 /* Optional: improve touch targets on smaller phones if needed */
 @media (max-width: 800px) {
-  .title { font-size: 18px; }
+  .title {
+    font-size: 18px;
+  }
+}
+
+#header {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  border-bottom: 1px red solid;
+  padding: 12px;
+  margin: 0 auto;
 }

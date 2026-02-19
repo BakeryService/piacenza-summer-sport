@@ -1,5 +1,41 @@
 <div class="header">
-    <div class="logo">
-        <img src="assets/logo.jpeg" style="width: 50%; height: 50%; object-fit: contain;" />
+    <h3>Chi Siamo</h3>
+    <div class="normal-text">
+        <p>
+            Dal 2016, Piacenza Summer Sport è il punto di riferimento per i bambini e ragazzi della città e della
+            provincia
+            che vogliono vivere un’estate all’insegna dello sport, del divertimento e delle amicizie. Il nostro centro
+            estivo nasce con l’obiettivo di offrire un’esperienza completa: attività sportive, giochi di squadra,
+            laboratori e momenti di socializzazione, il tutto in un ambiente sicuro e accogliente.
+        </p>
+        <p>
+            Grazie a uno staff qualificato e appassionato, accompagniamo i partecipanti nella scoperta delle proprie
+            capacità, incoraggiando il miglioramento personale e lo spirito di squadra. Ogni anno, Piacenza Summer
+            Sport continua a crescere, diventando una vera e propria tradizione estiva per la città, dove gioco,
+            sport e amicizia si incontrano.
+        </p>
+    </div>
+
+    <div class="viewer" #viewer>
+        @if (photos().length > 0) {
+        <!-- Thumbnail gallery -->
+        <div class="thumbnails">
+            @for (img of photos(); track img; let i = $index) {
+            <img [src]="img + '?w=100'" (click)="currentIndex.set(i)" [class.active]="i === currentIndex()"
+                alt="Thumb {{i+1}}" loading="lazy">
+            }
+        </div>
+        <div class="image-container" (mousedown)="onMouseDown($event)"
+            (mousemove)="onMouseMove($event)" (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()">
+            @defer (on viewport) {
+            <img [src]="photos()[currentIndex()]"
+                class="main-image" alt="Viewer image" loading="lazy">
+            } @placeholder {
+            <div class="placeholder">Loading image...</div>
+            }
+        </div>
+        } @else {
+        <p>No images available.</p>
+        }
     </div>
 </div>
