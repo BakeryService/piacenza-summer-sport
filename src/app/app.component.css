@@ -96,3 +96,11 @@
   height: auto;     /* Maintains aspect ratio */
   display: block;   /* Removes extra spacing at the bottom */
 }
+
+.main-background {
+  background-image: url('/assets/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Div needs a height to show the background */
+  width: 100%;
+}
