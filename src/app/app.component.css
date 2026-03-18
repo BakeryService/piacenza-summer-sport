@@ -89,3 +89,10 @@
   padding: 12px;
   margin: 0 auto;
 }
+
+/* In your component's CSS file */
+.responsive-img {
+  max-width: 100%; /* Image shrinks as the container shrinks */
+  height: auto;     /* Maintains aspect ratio */
+  display: block;   /* Removes extra spacing at the bottom */
+}
