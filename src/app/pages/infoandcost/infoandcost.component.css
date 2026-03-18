@@ -1,0 +1,14 @@
+#main {
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  border-bottom: 1px red solid;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+.responsive-img {
+  max-width: 100%; /* Image shrinks as the container shrinks */
+  height: auto;     /* Maintains aspect ratio */
+  display: block;   /* Removes extra spacing at the bottom */
+}
