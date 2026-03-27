@@ -24,7 +24,7 @@ export const routes: Routes = [
   {
     path: 'bonus',
     loadComponent: () =>
-      import('./pages/workinprogress/workinprogress.component').then((com) => com.WorkinprogressComponent),
+      import('./pages/bonus/bonus.component').then((com) => com.BonusComponent),
   },
   {
     path: 'location',
